@@ -11,6 +11,8 @@ Group: 		Networking/WWW
 Url: 		http://xviservicethief.sourceforge.net
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	qt4-devel
+Provides:	xvst = %version
+Provides:	xviservicethief = %version
 
 %description 
 xVideoServiceThief (a.k.a xVST) is a tool for downloading your favourite
