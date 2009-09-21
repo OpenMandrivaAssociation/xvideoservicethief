@@ -3,7 +3,7 @@
 Summary:	Downloading your favourite video clips
 Name:		xvideoservicethief
 Version: 	1.8.2
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source0: 	http://downloads.sourceforge.net/xviservicethief/xVideoServiceThief_%{tarballver}_alpha_src.zip
 Patch0:		xvideoservicethief-1.8.2-gcc43.patch
 License: 	GPLv2+
