@@ -1,18 +1,18 @@
 %define tarballver %(echo %version|sed -e 's/\\./_/g')
+%define tarballname xVST
 
 Summary:	Downloading your favourite video clips
 Name:		xvideoservicethief
-Version: 	1.8.2
-Release: 	%mkrel 2
-Source0: 	http://downloads.sourceforge.net/xviservicethief/xVideoServiceThief_%{tarballver}_alpha_src.zip
-Patch0:		xvideoservicethief-1.8.2-gcc43.patch
+Version: 	2.4.1
+Release: 	1
+Source0: 	%{tarballname}_%{tarballver}_src.zip
 License: 	GPLv2+
 Group: 		Networking/WWW
 Url: 		http://xviservicethief.sourceforge.net
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	qt4-devel
 Provides:	xvst = %version
 Provides:	xviservicethief = %version
+Patch0:         xvideoservicethief-2.4.1-gcc47.patch
 
 %description 
 xVideoServiceThief (a.k.a xVST) is a tool for downloading your favourite
@@ -20,14 +20,6 @@ video clips from a lot of video websites.
 
 xVideoServiceThief also provide you the ability to convert each video in
 most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.
-
-%if %mdkversion < 200900
-%post
-%update_menus
-
-%postun
-%update_menus
-%endif
 
 %files
 %defattr(-,root,root)
@@ -37,7 +29,7 @@ most popular formats: AVI, MPEG1, MPEG2, WMV, MP4, 3GP, MP3 file formats.
 #--------------------------------------------------------------------
 %prep
 %setup -q -c -n %name-%version
-%patch0 -p0
+%patch0 -p1
 
 %build
 %qmake_qt4
@@ -61,4 +53,17 @@ EOF
 
 %clean
 rm -rf %{buildroot}
+
+
+
+%changelog
+* Mon Sep 21 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.8.2-2mdv2010.0
++ Revision: 446274
+- rebuild
+
+* Sun Oct 26 2008 Funda Wang <fundawang@mandriva.org> 1.8.2-1mdv2009.1
++ Revision: 297460
+- adding virtual provides
+- import xvideoservicethief
+
 
