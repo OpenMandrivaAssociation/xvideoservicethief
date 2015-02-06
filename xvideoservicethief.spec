@@ -4,7 +4,7 @@
 Summary:	Downloading your favourite video clips
 Name:		xvideoservicethief
 Version: 	2.4.1
-Release: 	1
+Release: 	2
 Source0: 	%{tarballname}_%{tarballver}_src.zip
 License: 	GPLv2+
 Group: 		Networking/WWW
