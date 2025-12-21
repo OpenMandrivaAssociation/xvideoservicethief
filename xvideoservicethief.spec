@@ -9,6 +9,7 @@ Source0: 	%{tarballname}_%{tarballver}_src.zip
 License: 	GPLv2+
 Group: 		Networking/WWW
 Url: 		https://xviservicethief.sourceforge.net
+BuildRequires:	make
 BuildRequires: 	qt4-devel
 Provides:	xvst = %version
 Provides:	xviservicethief = %version
